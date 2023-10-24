@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표에 css</title>
+
+    <style>
+        table {
+            /* border: 1px solid black; */
+            border-collapse: collapse;
+
+        }
+
+        th,
+        td {
+            border: 1px dashed black;
+            width: 150px;
+            height: 30px;
+            text-align: center;
+            border-left: none;
+            border-right: none;
+        }
+
+        thead {
+            background-color: coral;
+            border-top: 2px solid red;
+            border-bottom: 2px solid red;
+
+        }
+
+        tfoot {
+            border-bottom: 2px solid red;
+            background-color: darksalmon;
+        }
+
+        tbody>tr:nth-child(2n) {
+            background-color: darksalmon;
+        }
+
+        tbody>tr:hover {
+            background-color: hotpink;
+            color: rgb(53, 184, 64);
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>날짜</th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>내용입니다. 1</td>
+                <td>영이</td>
+                <td>2023-07-18</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>내용입니다. 2</td>
+                <td>순이</td>
+                <td>2023-07-19</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>내용입니다. 3</td>
+                <td>철수</td>
+                <td>2023-07-20</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>내용입니다. 4</td>
+                <td>영철</td>
+                <td>2023-07-21</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>내용입니다. 5</td>
+                <td>길동</td>
+                <td>2023-07-22</td>
+            </tr>
+
+
+        <tfoot>
+            <tr>
+                <td>합계</td>
+                <td>285</td>
+                <td>325</td>
+                <td>이천년이십이</td>
+            </tr>
+        </tfoot>
+        </tbody>
+
+
+
+
+
+    </table>
+
+
+    <br>
+    <br>
+
+
+    <table></table>
+</body>
+
+</html>

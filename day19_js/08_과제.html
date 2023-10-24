@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+        #img_r {
+
+            width: 580px;
+
+            height: 500px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <img src="/img/뉴옥.jpg" id="img_r">
+
+    <script>
+
+        let img_c = ['달', '바위', '마라', '여행'];
+
+        setInterval(img_r_f, 1500);
+
+        function img_r_f() {
+
+            const count_r = Math.floor(Math.random() * 4);
+
+            let img_r = document.getElementById('img_r');
+
+            img_r.src = `/image/${img_c[count_r]}.jpg`;
+
+            console.log(img_c[count_r]);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

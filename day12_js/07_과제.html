@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <button type="button" onclick="play('가위');" id="btn-scissors">
+
+        <img src="/image/가위.jpg" alt="">
+
+    </button>
+
+    <button type="button" onclick="play('바위')" id="btn-rock">
+
+        <img src="/image/바위.jpg" alt="">
+
+    </button>
+
+    <button type="button" onclick="play('보');" id="btn-paper">
+
+        <img src="/image/보.jpg" alt="">
+
+    </button>
+
+    <h3 id="result"></h3>
+
+    <!-- 결과 출력 라인 -->
+
+    <script>
+
+        let win = 0;
+
+        let draw = 0;
+
+        let lose = 0;
+
+        let playchar, comchar;
+
+        let rounds = 0;
+
+        let wp = 0;
+
+        const max = 10;
+
+        function play(cc) {
+            console.log(cc);
+
+            if (rounds >= max) {
+
+                alert("10회! 게임이 종료되었습니다.");
+
+                return;
+
+            }
+
+            let com = Math.floor(Math.random() * 3) + 1;
+
+            if (cc === '가위') {
+
+                playchar = "가위";
+
+            } else if (cc === '바위') {
+
+                playchar = "바위";
+
+            } else if (cc === '보') {
+
+                playchar = "보";
+
+            }
+
+            if (com === 1) {
+
+                comchar = "가위";
+
+            } else if (com === 2) {
+
+                comchar = "바위";
+
+            } else if (com === 3) {
+
+                comchar = "보";
+
+            }
+
+            console.log("Player: " + playchar);
+
+            console.log("Computer: " + comchar);
+
+            let result = 0;
+
+            if (playchar === "가위") {
+
+                if (comchar === "가위") {
+
+                    result = 0;
+
+                } else if (comchar === "바위") {
+
+                    result = -1;
+
+                } else {
+
+                    result = 1;
+
+                }
+
+            } else if (playchar === "바위") {
+
+                if (comchar === "바위") {
+
+                    result = 0;
+
+                } else if (comchar === "보") {
+
+                    result = -1;
+
+                } else {
+
+                    result = 1;
+
+                }
+
+            } else if (playchar === "보") {
+
+                if (comchar === "보") {
+
+                    result = 0;
+
+                } else if (comchar === "가위") {
+
+                    result = -1;
+
+                } else {
+
+                    result = 1;
+
+                }
+
+            }
+
+            // result_f(result);
+            let re = result_m(result);
+            console.log(re);
+
+
+            rounds++;
+            r = ("당신 : " + playchar + "<br>컴퓨터 : " + comchar + "<br>" + re + "<br>");
+
+            r += ("현재 전적<br>승: " + win + "<br>무: " + draw + "<br>패: " + lose + "<br>승률: " + wp + "%");
+
+            document.getElementById('result').innerHTML = r;
+
+        }
+
+        function result_m(result) {
+
+            if (result === -1) {
+
+
+                lose++;
+                wp = wp11();
+                return "졌습니다.";
+
+            } else if (result === 1) {
+
+
+                draw++;
+                wp = wp11();
+                return "비겼습니다.";
+
+            } else {
+
+
+                win++;
+                wp = wp11();
+                return "이겼습니다.";
+
+            }
+            console.log(win);
+            console.log(lose);
+            console.log(draw);
+        }
+
+
+        function wp11() {
+
+            let total = win + draw + lose;
+
+            let wp = (win / total) * 100;
+
+            return Math.round(wp);
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

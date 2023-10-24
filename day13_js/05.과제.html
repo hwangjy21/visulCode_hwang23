@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+        button {
+
+            margin: 5px;
+
+        }
+
+        input {
+
+            margin: 5px;
+
+            width: 80px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Up Down Game</h1>
+
+    <button type="button" id="ran_button" onclick="random()">랜덤 숫자 생성 버튼</button>
+
+    <button type="button" id="rplay_button" onclick="rplay()">다시 시도</button><br>
+
+    <input type="number" id="user_a" max=99 min=1> <button type="submit" id="r_button" onclick="answer()">정답!!</button>
+
+    <h3 id="play"></h3>
+
+    <script>
+
+        let a;
+
+        let count = 0;
+        let ran;
+
+        function random() {
+
+            ran = Math.floor(Math.random() * 99) + 1;
+
+            console.log(ran);
+
+            alert("컴퓨터가 랜덤으로 숫자를 생성하였습니다.");
+
+        }
+
+        function answer() {
+
+            if (count >= 10) {
+
+
+                alert("10회 초과입니다. 게임을 종료합니다.");
+                return;
+
+
+            }
+
+
+
+            let user_a = parseInt(document.getElementById("user_a").value);
+            const play = document.getElementById("play");
+
+
+            console.log(user_a);
+            if (ran == user_a) {
+
+                console.log("정답입니다.");
+
+                play.innerText = "정답입니다!" + (count + 1) + "회";
+                alert("정답입니다. 게임을 종료합니다.");
+
+                return;
+
+            }
+
+            count++;
+
+
+
+
+
+            if (ran > user_a) {
+
+                console.log("up!");
+
+                play.innerText = "up!" + count + "회";
+
+            }
+
+            else if (ran < user_a) {
+
+                console.log("down!");
+
+                play.innerText = "down!" + count + "회";
+
+            }
+
+            console.log("--" + count);
+
+        }
+
+
+        function rplay() {
+
+            alert("다시!");
+
+            window.location.reload();
+
+        }
+
+    </script>
+
+</body>

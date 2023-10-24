@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인율 구하기</title>
+    <fieldset>
+        <legend>계산표</legend>
+        상품명 : <input type="text" id="product">
+        가격 : <input type="number" id="price">
+        할인율 : <input type="number" id="sale">%
+        <button type="button" onclick="calcEvent()">계산</button>
+        <p id="calc">
+
+    </fieldset>
+
+    </p>
+</head>
+
+<body>
+    <script>
+        //가격과 할인율을 입력받아 할인금액과 지불금액을 구하시오
+        //ex) 50000 5% 할인금액 : 2500 지불금액 :47500
+
+        function calcEvent() {
+            let name = document.getElementById('product').value;
+            let price = parseFloat(document.getElementById('price').value);
+            let sale = parseFloat(document.getElementById('sale').value);
+
+            let saleprice = price * sale / 100;
+            let count = price - saleprice;
+
+            let calc = document.getElementById('calc');
+
+
+            calc.innerHTML = `${name}의 가격입니다.<br>`;
+            calc.innerHTML += `할인 금액은 : ${saleprice}<br>`;
+            calc.innerHTML += `지불 금액은 : ${count}`;
+        }
+
+
+    </script>
+</body>
+
+</html>

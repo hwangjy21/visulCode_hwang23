@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #button_p {
+            font-size: 30px;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button type="button" id="create_e">엘리먼트 만들기</button>
+    <div id="elemtent_p"> </div>
+    <div id="button_p"> </div>
+
+
+
+    <script>
+
+        document.getElementById('create_e').addEventListener('click', () => {
+            let elemtent_p = document.getElementById('elemtent_p');
+            elemtent_p.innerHTML = ` <button type="button" id="create_e">생성된 버튼</button>`
+        })
+
+
+        document.getElementById('elemtent_p').addEventListener('click', () => {
+            let button_p = document.getElementById('button_p');
+            button_p.innerHTML = `생성된 버튼을 클릭함!`
+        })
+    </script>
+</body>
+
+</html>

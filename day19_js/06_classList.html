@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Tag의 classTag
+    </h1>
+
+    <ul id="name1">
+        <li>element.classList : class 속성값은 여러개가 올 수 있으므로 list의 형태로 리턴</li>
+        <li>리턴 타입은 TokenList 객체이기 ㅐ문에 별도의 메서드가 사용됨</li>
+    </ul>
+    <script>
+        const ul = document.getElementsByTagName('ul')
+        // 클래스 추가 메서드
+        ul[0].classList.add['ul2'];
+
+        //클래스 삭제 메서드
+        ul[0].classList.remove('iter');
+
+        //클래스 탐색 메서드 => 리턴 boolean
+        let bool = ul[0].classList.contains('ul2');
+        console.log(bool);
+
+        //toggle : 있으면 삭제, 없으면 추가 (가장 마지막)
+
+//replace(): odd-> 
+    </script>
+</body>
+
+</html>

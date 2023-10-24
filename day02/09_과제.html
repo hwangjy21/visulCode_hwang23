@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        a {
+            background-color: darkturquoise;
+            font-size: 45px;
+            font-weight: 1000;
+        }
+
+        a:link {
+            color: red;
+        }
+
+
+        a:visited {
+            color: yellow;
+        }
+
+
+        a:active {
+            color: chocolate;
+        }
+
+
+
+
+
+
+        ul>li {
+            font-size: 30px;
+            list-style: none;
+            display: inline;
+            margin-right: 30px;
+
+        }
+
+        ul>li :hover {
+            color: rgb(83, 160, 96);
+
+        }
+
+        ul>li:nth-child(2n) {
+            color: red;
+        }
+
+
+
+        ul>li:nth-child(3n) {
+            color: green;
+        }
+
+        ul>li:first-child,
+        li:last-child {
+            font-weight: 900;
+
+        }
+
+        /*
+         after : 뒤에  붙이는 가상 값
+         before : 전에 붙이는 가상 값 */
+
+        li::after {
+            content: " 번째";
+        }
+
+        li::before {
+            content: " li";
+        }
+    </style>
+</head>
+
+<body>
+    <!-- div 3개를 만들어
+        naver, google, daum 사이트되게 하고,
+        각 div는 색깔과 모양을 달리 스타일 주기.
+        color : 글자색 
+        background_color : 면색
+        폰트 관련 스타일들.
+
+        링크 클릭했는지에 따라서 글꼴 색이 달라지는 가상선택지가 있음.
+        (의사선택자)
+        a : active (클릭할 때 색)
+        a : visited (링크를 눌어본 후 색)
+        a : link (방문전)
+
+        
+    -->
+
+
+    <!-- ul ->li 태그 10개 생성
+        전체 글자크기 크기 (일정하게...)
+        짝수 : 색 변경(빨간색)
+        3,6,9 : 초록색
+        1,10 : 굻게
+        :hover
+    -->
+
+    <div class="naver"><a href="http://naver.com" target="_blank"> naver</a> </div>
+    <div class="google"><a href="http://google.com" target="_blank">google</a> </div>
+    <div class="daum"><a href="http://daum.net" target="_blank">daum</a> </div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+
+</body>
+
+</html>

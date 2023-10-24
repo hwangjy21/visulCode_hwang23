@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <button type="button" onclick="addListItems()">Li Tag 한번에 추가하기</button>
+    <div id="tag_a">
+    </div>
+
+
+
+    <button type="button" onclick="addListItem_c()">Li Tag 하니씩 추가하기</button>
+    <div id="tag_c">
+    </div>
+    <div id="tag_a_1">
+    </div>
+    <script>
+
+        let list_p = ['html', 'css', 'javascript', 'sql'];
+
+        function addListItems() {
+            let tag_a = document.getElementById('tag_a');
+            tag_a.innerHTML = '';
+
+            for (let i = 0; i < list_p.length; i++) {
+                tag_a.innerHTML += `<li>${list_p[i]}</li>`;
+            }
+        }
+        function addListItem_c() {
+            count = 0;
+            let tag_c = document.getElementById('tag_c');
+
+            if (count < list_p.length) {
+                let li = document.createElement('li');
+                li.innerHTML = list_p[count];
+
+                tag_c.appendChild = list_p[count];
+                count++;
+
+            }
+        }
+
+        // //appendchild 사용
+        // document.getElementById('btn3').addEventListener('click',()=>{
+        //     let ul = document.getElementById('tag_a_1');
+        //     list_p.forEach((list_p))
+        // })
+
+
+    </script>
+</body>
+
+</html>

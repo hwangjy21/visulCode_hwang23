@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //class user 생성
+        //생서자로 name,birth를 받아서 멤버변수로 저장
+        //age() 나이를 리턴
+        //status() 성인인지 미성년자인지 콘솔에 출력
+        //생성자에서 선언된 값을 리턴시....  //내부속성
+        //get age(){
+        //    return this._age
+
+        // }
+
+
+        let bitthday = new Date("2009.01.01");
+        console.log(bitthday.toLocaleDateString());
+
+        console.log('--예제--');
+
+        class User {
+            constructor(name, birth) {
+                this.name = name;
+                this.birth = birth;
+
+            }
+
+            get parsonInfo() {
+                return `${this.name}, ${this.birth}`;
+
+            }
+
+            age() {
+                let birthday = new Date(this.birth);
+                let todayYear = new Date().getFullYear(); //오늘 날짜 연도
+                return todayYear - birthday.getFullYear;
+            }
+
+
+            status() {
+
+                let age = this.age();
+                // setter, User.age = value 를 실행할 때 실행되는 코드
+                if (age < 20) {
+                    console.log('미성년자')
+                }
+                else {
+                    console.log('성년')
+                }
+            }
+        }
+
+        let person = new User('김민정', '2001-01-03');
+
+        //메서드 일경우() , get일 경우 
+        console.log(person.parsonInfo);
+        console.log(person.age());
+        person.status();
+
+
+
+    </script>
+</body>
+
+</html>

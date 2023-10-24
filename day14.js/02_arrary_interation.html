@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const numArr = [12, 8, 46, 78, 45, 68, 's', 'p', 'k'];
+        const strArr = ['a', 'p', 's', 'u', 'y', 'k', 'l'];
+
+        //forEach의 사용하여 인데스, 벨류값을 콘솔에 찍어라
+
+        numArr.forEach(function (index, elem_value) {
+            console.log(index, elem_value);
+        })
+        console.log("----------------------------------------------------------");
+        strArr.forEach(function (index, elem_value) {
+            console.log(index, elem_value);
+        })
+        console.log("----------------------------------------------------------");
+        const newArr = numArr.forEach(function (e, i) {
+            return `${i} :${e}` //c처리는 가능하지만 리턴은 안됨
+        })
+
+        console.log(newArr);
+
+        console.log("---------------------------map-------------------------------");
+        const newArrMap = strArr.map(function (index, elem_value, arryay) {
+            return `${index} :${elem_value} :${arryay}`
+        })
+
+        console.log(newArrMap);
+
+
+        console.log("----------------------------------------------------------");
+        function printArr(e, i, a) {
+            return `${i} :${e} :${a}`
+        }
+
+
+
+
+        console.log("---------------------------filter-------------------------------");
+        const newNumArr = numArr.filter(function (e, i, arr) {
+            return !isNaN(e);//NaN Not A Number
+
+        })
+        console.log(newNumArr);
+
+    </script>
+</body>
+
+</html>

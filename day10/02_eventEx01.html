@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+
+            <legend>
+                성적 계산기
+            </legend>
+            이름 : <input type="text" id="name"><br>
+            국어 : <input type="number" id="korea"><br>
+            영어 : <input type="number" id="english"><br>
+            수학 : <input type="number" id="mat"><br>
+
+            <button type="button" onclick="calcEvent()">계산</button>
+
+            <p id="calc"></p>
+
+
+        </fieldset>
+
+        <script>
+            //이름, 국어, 영어, 수학 점수를 입력받아 합꼐와 평균을 화면에 찍어라
+
+            function calcEvent() {
+                let name = document.getElementById('name').value;
+                let korea = parseFloat(document.getElementById('korea').value);
+                let english = parseFloat(document.getElementById('english').value)
+                let mat = parseFloat(document.getElementById('mat').value);
+
+
+                let sum = parseFloat(korea + english + mat);
+                let average = Math.round(sum / 3);// 점수 단위로 반올림
+
+
+
+                let calc = document.getElementById('calc');
+
+
+                calc.innerHTML = ` 당신의 이름은 ${name}<br><hr>
+                `;
+                calc.innerHTML += `합계 = ${sum}<br>
+                `;
+                calc.innerHTML += `평균 = ${average}
+                `;
+
+            }
+        </script>
+
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+    <style>
+        body {
+            background-color: rgb(50, 181, 201);
+
+        }
+
+        .b-box {
+
+            width: 700px;
+            height: 390px;
+            background-color: rgb(187, 238, 221);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+
+            text-align: center;
+
+
+
+        }
+
+        input {
+            padding: 10px;
+            outline: none;
+            border: none;
+
+
+            width: 600px;
+            height: 60px;
+            border-radius: 10px;
+            font-size: 25px;
+        }
+
+
+        #id {
+            margin-top: 30px;
+            background-color: rgb(181, 231, 238);
+        }
+
+        #password {
+            margin-top: 20px;
+            background-color: rgb(199, 233, 238);
+        }
+
+        #id:hover,
+        #password:hover {
+            background-color: rgb(125, 194, 206);
+
+
+
+        }
+
+        .submit {
+            margin-top: 19px;
+            background-color: rgb(50, 181, 201);
+            cursor: pointer;
+        }
+
+        .submit:hover {
+            background-color: rgb(125, 194, 206);
+
+        }
+
+        .forget-p {
+            margin-top: 50px;
+
+        }
+
+
+        a:link {
+            color: gray;
+        }
+
+
+        a:visited {
+            color: gray;
+        }
+
+
+        a:active {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div class="b-box">
+            <div class="f-box">
+                <input type="text" name="id" id="id" placeholder="아이디를 입력하세요.">
+
+                <input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요.">
+
+                <input type="submit" class="submit" value="로그인">
+
+                <div class="forget-p"><a href="https://nid.naver.com/user2/help/pwInquiry?lang=ko_KR">
+                        비밀번호를 잊어버리셨나요</a></div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

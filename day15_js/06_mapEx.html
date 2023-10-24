@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+       input 2개 생성
+       과목, 점수
+       추가 버튼 => map 추가
+       출력버튼 => map을 출력 ul=>li 추가
+       결과버튼 => 합계 , 평균 , 평가(80이상이면 통과 아니면  탈락  ) =h3
+     -->
+
+    <div id="map">
+        과목: <input type="text" id="sub">
+        점수: <input type="text" id="score">
+
+    </div>
+    <button type="button" onclick="add()">추가</button>
+    <button type="button" id="printBtn" onclick="print()">출력</button>
+    <button type="button" id="printBtn" onclick="print_r()">결과</button>
+    <h3 id="print_s">
+
+    </h3>
+
+    <script>
+        let sum = 0;
+        let sub;
+        let score;
+        sub = "";
+        const Map_E = new Map();
+        console.log(Map_E);
+        function add() {
+            let sub = document.getElementById("sub").value;
+
+            let score = Number(document.getElementById("score").value);
+
+
+            Map_E.set(sub, score);
+            sum += score;
+            console.log(Map_E);
+            console.log(sum);
+
+
+        }
+        function print() {
+            sub = `<ol>`
+            Map_E.forEach(function (v, k) {
+                console.log(v, k);
+
+                sub += `<li> ${k}:${v} </li>`;
+
+            })
+            sub += `</ol>`
+            document.getElementById('print_s').innerHTML = sub;
+
+        }
+        function print_r() {
+            let avg = sum / Map_E.size;
+            let test = "";
+            if (avg >= 80) {
+                test = "통과";
+            } else {
+                test = "탈락"
+            }
+            document.getElementById('print_s').innerHTML = `합계 :${sum}<br> 평균 :${sum / avg}<br> 평가: ${test}`;
+        }
+    </script>
+</body>
+
+</html>

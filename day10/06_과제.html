@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+        .sub {
+
+            font-weight: 600;
+
+            text-align: center;
+
+        }
+
+        td:nth-child(2) {
+
+            width: 200px;
+
+            text-align: center;
+
+        }
+
+        tr:nth-child(3) {
+
+            height: 150px;
+
+        }
+
+        input:hover {
+
+            background-color: rgba(0, 191, 255, 0.515);
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h3>데이터 리스트</h3>
+
+    <ol>
+
+        <li>이름 <input type="text" id="name"></li>
+
+        <li>거주지 <input type="text" id="addar"></li>
+
+        <li>좋아하는 리스트
+
+            <ul>
+
+                <li><input type="text" id="favor1"></li>
+
+                <li><input type="text" id="favor2"></li>
+
+                <li><input type="text" id="favor3"> </li>
+
+            </ul>
+
+        </li>
+
+        <li>이메일</li><input type="text" id="email"></li>
+
+        <li>pet 소유 여부<input type="text" id="pet" placeholder="y/n"></li>
+
+        <li>지금 가장 원하는 것<input type="text" id="wanna"> </li>
+
+        <button type="button" onclick="getDatas()">입력</button>
+
+        <!-- table 태그로 값을 -->
+
+        <!-- 입력받을 input 구조 생성 -->
+
+    </ol>
+
+    <h3>리스트 구조에 따라 자바스크립트 객체를 만들어보자</h3>
+
+    <button type="button" onclick="setDatas()">출력</button>
+
+    <table border="1">
+
+        <tr>
+
+            <td class="sub">이름</td>
+
+            <td id="nameSet"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="sub">거주지</td>
+
+            <td id="addarSet"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="sub">좋아하는 리스트</td>
+
+            <td id="favorSet"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="sub">이메일</td>
+
+            <td id="emailSet"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="sub">pet 소유여부</td>
+
+            <td id="petSet"></td>
+
+        </tr>
+
+        <tr>
+
+            <td class="sub">지금가장원하는것</td>
+
+            <td id="wannaSet"></td>
+
+        </tr>
+
+    </table>
+
+    <script>
+
+        const dataObj = {
+
+            name: "",
+
+            addar: "",
+
+            favor: {
+
+                favor1: "",
+
+                favor2: "",
+
+                favor3: "",
+
+            },
+
+            email: "",
+
+            pet: "",
+
+            wanna: ""
+
+        }
+
+        //위 html 에서 받은 값을 객체에 저장 후 콘솔에 출력
+
+        //let 변수명 ;
+
+        //변수명=값;
+
+        function getDatas() {
+
+            dataObj.name = document.getElementById('name').value;
+
+            dataObj.addar = document.getElementById('addar').value;
+
+            dataObj.favor.favor1 = document.getElementById('favor1').value;
+
+            dataObj.favor.favor2 = document.getElementById('favor2').value;
+
+            dataObj.favor.favor3 = document.getElementById('favor3').value;
+
+            dataObj.email = document.getElementById('email').value;
+
+            dataObj.pet = document.getElementById('pet').value;
+
+            dataObj.wanna = document.getElementById('wanna').value;
+
+            console.log(dataObj);
+
+        }
+
+        function setDatas() {
+
+            let nameSet = document.getElementById('nameSet');
+
+            let addarSet = document.getElementById('addarSet');
+
+            let favor = `
+
+<ul>
+
+<li>${dataObj.favor.favor1}</li>
+
+<li>${dataObj.favor.favor2}</li>
+
+<li>${dataObj.favor.favor3}</li>
+
+</ul>
+
+`;
+
+            let emailSet = document.getElementById('emailSet');
+
+            let petSet = document.getElementById('petSet');
+
+            let wannaSet = document.getElementById('wannaSet');
+
+            nameSet.innerText = dataObj.name;
+
+            addarSet.innerText = dataObj.addar;
+
+            emailSet.innerText = dataObj.email;
+
+            petSet.innerText = dataObj.pet;
+
+            favorSet.innerHTML = favor;
+
+            wannaSet.innerText = dataObj.wanna;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

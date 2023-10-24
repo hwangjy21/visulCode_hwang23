@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>form 태그를 통해 데이터를 받아오기</h1>
+    <li>input, textarea, html, element의 속성, 텍스트 데이터 받아오기</li>
+    <li>form 태그의 데이터는 valu 속성으로 값이 매핑되어 있으므로 valu를 호출하면 값을 가져올 수 있음.</li>
+    <li>select-option, radio, checkbox value 값을 선택된 값을 가져와야 하기 떄문에 value 값을 추가하는 작업이 필요</li>
+    <li>value 속성의 데이터는 모두 String으로 처리된다.</li>
+    <li>string 처리된 데이터는 숫자일 경우 숫자로 사용하기 위해서는 변환이 필요</li>
+    <br>
+    <form action="">
+        <fieldset>
+            <legend>
+                <!-- 제목 --> 이벤트를 활용한 데이터 전송
+            </legend>
+            id : <input type="text" id="userid"><br>
+            pw :<input type="text" id="userpw"><br>
+            birth :<input type="date" id="birth"><br>
+            pin :<input type="number" id="pin"><br>
+            <button type="button" onclick="clickEventInput()">전송</button>
+            <button type="button" onclick="makeList()">리스트 전송</button>
+
+        </fieldset>
+    </form>
+
+
+
+    <h3 id="info"></h3>
+
+    <h4 id="ol"></h4>
+    <script>
+        function makeList() {
+            let userid = document.getElementById('userid').value;
+            console.log(userid);
+            let userpw = document.getElementById('userpw').value;
+            let birth = document.getElementById('birth').value;
+            let pin = document.getElementById('pin').value;
+            console.log(`입력된 값 -> 아이디 :${userid}, 비밀번호 :${userpw}, 생년월일:${birth}, pin:${pin}`);
+
+            //birth -> date, pin -> number
+
+            birth = new Date(birth);
+            console.log(typeof bith);
+
+
+            //String -> 숫자로 변경
+            //pasrseInt (변수 => 정수만 가능);
+            // Number(숫자로 변경될 수 있는 문자)
+            pin = parseInt(pin);
+            console.log(typeof pin);
+            pin = Number(pin);
+            console.log(typeof pin);
+
+            //li 태그로 출력
+            //userid :rkskekfk
+            let onclick = document.getElementById('ol');
+            ol.innerHTML = `<span style = "color:green">  <li> 아이디 : ${userid}</li> <li>비밀번호 : ${userpw}</li> <li>생년월일 : ${birth}</li> <li>pin : ${pin}</li>`
+
+
+
+        }
+
+        function clickEventInput() {
+            //화면에 입력한 값을 받아오는 과정
+            let userid = document.getElementById('userid').value;
+            console.log(userid);
+            let userpw = document.getElementById('userpw').value;
+            let birth = document.getElementById('birth').value;
+            let pin = document.getElementById('pin').value;
+            console.log(`입력된 값 -> 아이디 :${userid}, 비밀번호 :${userpw}, 생년월일:${birth}, pin:${pin}`);
+
+            //h3 태그에 출력하는 과정
+            let info = document.getElementById('info');
+            // info.innerText = `입력된 값 -> 아이디 :${userid}, 비밀번호 :${userpw}, 생년월일:${birth}, pin:${pin}`
+
+            info.innerText = `userid : ${userid}
+            `;
+            info.innerText += `userpw : ${userpw}
+            `;
+            info.innerText += `birth : ${birth}
+            `;
+            info.innerText += `pin : ${pin}`;
+        }
+
+    </script>
+</body>
+
+</html>

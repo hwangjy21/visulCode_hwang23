@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        .box1 {
+            border: 1px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 300px;
+            height: 400px;
+        }
+
+        .box2 {
+            border: 2px solid black;
+            margin-left: auto;
+            margin-right: auto;
+
+            width: 250px;
+            height: 30px;
+            margin-top: 10px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: 700;
+
+        }
+
+        .box3 {
+            border: 2px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            width: 250px;
+            height: 290px;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: 700;
+
+        }
+
+        .box4 {
+            border: 2px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            width: 250px;
+            height: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: 700;
+
+        }
+
+        .m-box {
+
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            box-shadow: 3px 2px 10px white;
+
+
+
+        }
+
+        .m-box:nth-child(1) {
+            background-color: red;
+            z-index: 50;
+            left: 47%;
+            top: 130px;
+            transform: translateX(-50%);
+        }
+
+        .m-box:nth-child(2) {
+            background-color: green;
+            z-index: 40;
+
+            left: 50%;
+            top: 165px;
+            transform: translateX(-50%);
+        }
+
+        .m-box:nth-child(3) {
+            background-color: blue;
+            z-index: 30;
+
+            left: 53%;
+            top: 190px;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2">텍스트</div>
+        <div class="box3">
+            <div class="m-box"></div>
+            <div class="m-box"></div>
+            <div class="m-box"></div>
+        </div>
+        <div class="box4">텍스트</div>
+    </div>
+</body>
+
+</html>

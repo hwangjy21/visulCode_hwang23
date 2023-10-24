@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>구구단 출력</title>
+
+    <style>
+        td {
+
+            padding: 10px;
+
+        }
+
+        span {
+
+            font-weight: 700;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>구구단 2~9단까지 출력하기</h1>
+
+    <button type="button" onclick="print()">구구단 전체 출력</button>
+
+    <br>
+
+    <input type="number" id="num" min="2" max="9" placeholder="숫자(정수)를 입력하세요(2~9))">
+
+    <button type="button" onclick="print1()">구구단 출력</button>
+
+    <div id="mul">
+
+    </div>
+
+    <script>
+
+        function print() {
+
+            let mul = document.getElementById('mul');
+
+            let dan = `<table><tr>`;
+
+            for (i = 2; i <= 9; i++) {
+
+                dan += `<td><span>${i}단<br></span>`;
+
+                for (j = 1; j <= 9; j++) {
+
+                    dan += `${i} * ${j} = ${i * j}<br>`;
+
+                }
+
+                dan += `</td>`;
+
+            }
+
+            dan += `</tr></table>`;
+
+            mul.innerHTML = dan;
+
+        }
+
+        function print1() {
+
+            let num = document.getElementById('num');
+
+            let num_c = parseInt(num.value);
+
+            let mul = document.getElementById('mul');
+
+            let dan = `<table><tr>`;
+
+            dan += `<td><span>${num_c}단<br></span>`;
+
+            for (i = 1; i <= 9; i++) {
+
+                dan += `${num_c} * ${i} = ${num_c * i}<br>`;
+
+            }
+
+            dan += `</td></tr></table>`;
+
+            mul.innerHTML = dan;
+
+        }
+
+    </script>
+
+    </script>
+
+</body>
+
+</html>
+
+﻿

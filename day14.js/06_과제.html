@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+        .sub {
+
+            margin-left: 20px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>구구단 영역내에서 랜덤으로 문제를 내면 정답을 맞추는 로직</h1>
+
+    <h3 id="quiz">
+
+        <button type="button" onclick="sub_l()">문제출제</button>
+
+        <ol id="sub">
+
+        </ol>
+
+        <div id="count_s"></div>
+
+        <button type="button" onclick="scoring()">정답확인</button>
+
+        <script>
+
+            let answer = [];
+
+            function sub_l() {
+
+                questionList = "";
+
+                for (let i = 1; i <= 10; i++) {
+
+                    let ran1 = Math.floor(Math.random() * 8) + 2;
+
+                    let ran2 = Math.floor(Math.random() * 9) + 1;
+
+                    let ans = ran1 * ran2;
+
+                    answer[`sub_a_${i}`] = ans;
+
+                    questionList += `<li id="sub_a_${i}">${ran1} x ${ran2} = <input type="text" id="user_a_${i}"> </li>`;
+
+                }
+
+                document.getElementById('sub').innerHTML = questionList;
+
+            }
+
+            function scoring() {
+
+                let count = 0;
+
+                let count_s = 0;
+
+                for (let i = 1; i <= 10; i++) {
+
+                    let answer_u = parseInt(document.getElementById(`user_a_${i}`).value);
+
+                    let answer_q = answer[`sub_a_${i}`];
+
+                    if (answer_u === answer_q) {
+
+                        count++;
+
+                        console.log("정답");
+
+                        document.getElementById(`user_a_${i}`).style.backgroundColor = 'green';
+
+                    } else {
+
+                        document.getElementById(`user_a_${i}`).style.backgroundColor = 'red';
+
+                        console.log("오답");
+
+                    }
+
+                }
+
+                document.getElementById('count_s').innerHTML = "정답룰:"
+
+                count_s = +count / 10 * 100;
+
+                document.getElementById('count_s').innerHTML += count_s + "%"
+
+            }
+
+        </script>
+
+    </h3>
+
+</body>
+
+</html>
+
+﻿

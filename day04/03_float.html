@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        부모박스안에 box 3개 넣기 가로로 나열(left)
+        부모박스 크기가 500px*500px
+     -->
+    <style>
+        .p-box {
+            width: 500px;
+            height: 500px;
+            background-color: darksalmon;
+        }
+
+        .box {
+            width: calc(100% / 3);
+            height: 500px;
+
+            float: left;
+
+        }
+
+        /*
+        calc(식)
+        - 단위가 다른 값들을 계산해야 할 때 사용
+        - 딱 떨어지지 않는 값을 줄 때
+        - 연산자 앞뒤로 띄어쓰기 필수~!! 
+         */
+
+
+
+        .box1 {
+            background-color: darksalmon;
+        }
+
+        .box2 {
+            background-color: beige;
+        }
+
+        .box3 {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="p-box">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+    </div>
+</body>
+
+</html>

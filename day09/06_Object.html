@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>객체 : 식별할 수 있는 것을 상세 특징으로 표현하려는 형식</h1>
+
+    <ul>
+        <li>const로 선언하는 것이 일반적 : 객체의 지속성을 유지하기 위해서</li>
+        <li>
+            {} 속성명: 속성값, 속성명: 속성값... 표현
+        </li>
+        <li>
+            같은 객테 내애서 속성명은 중복되면 안됨(고유 키)
+        </li>
+        <li>
+            객체 내부의 속성 값으로 사용될 수 있는 데이터의 타입은 제한이 없다
+        </li>
+        <li>객체의 속성 값욿 익명함수를 정의
+            => 그 함수를 메서드라고 부른다.
+            메서드 이름은 속성명이 됨
+        </li>
+    </ul>
+
+    <script>
+        const car = { name: 'myCar', year: 2023 }
+        // car = 100;
+        // 재할이 불가능
+
+        console.log(car)
+
+        let myCar = { name: 'superCar', year: 2023 } //일반적이지 않다
+        myCar = 100;
+        console.log(myCar);
+        //myCar의 객체는 사라짐 - 객체를  활용하려고 했던 목적이 사라짐
+    </script>
+    <script>
+        const me = {
+            name: '오미란',
+            age: 20,
+            isDeveloper: true,
+            addar: "강남구",
+            'hoby': 'game',
+            'myFavor': 'game',
+
+            avail: {
+                year: 2020,
+                title: 'javascript',
+                var: 'ES6+',
+                project: 'Back-End',
+                intro: function () {
+                    console.log(`${me.avail.title}: ${me.avail.var}`);
+                    return `re:${this.title}:${this.var}`;
+                }
+            },
+            year: 2023
+
+        };
+
+        console.log(me);
+        console.log(me.name);
+        console.log(me.year);
+        console.log(me.avail.year);
+        console.log(me.avail.title);
+        console.log(me.avail.var);
+        console.log(me.avail.intro());
+
+        console.log("-------------------------------------------------------------------------------------------------");
+
+        console.log(me["addar"]);
+        console.log(me["hoby"]);
+        console.log(me["avail"]['title']);
+        console.log(me["avail"]['intro']());
+
+
+        let keyName = 'addar';
+        console.log(me[keyName]);
+
+        console.log(me['avail'].title);
+    </script>
+    <script>
+        //객체 생성 : 좋아하는 가수의 인적사항, 가수의 플레이리스트 3곡
+        //이름, 나이, 주소, 플레이리스트 (객체로 3곡), 함수로 3개(플레이리스트의 곡을 콘솔에 츌력)
+
+        const singer = {
+            name: '이승철',
+            age: 40,
+            addar: "서울 강남구",
+            '취미': '노래부르기',
+            playlist: {
+                first: '너랑나',
+                second: '좋은날',
+                third: '밤편지'
+            },
+            jukebox: function (f, s, t) {
+                console.log(`${this.playlist.first}, ${this.playlist.second}, ${this.playlist.third}`);
+                return `re : ${f},  ${s},  ${t}`
+            }
+
+
+        }
+
+        console.log(singer);
+        console.log(singer.name);
+        console.log(singer.playlist.first);
+        console.log(singer.jukebox('aaa', 'bbb', 'ccc'))
+
+    </script>
+
+</body>
+
+</html>

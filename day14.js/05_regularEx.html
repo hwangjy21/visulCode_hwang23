@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .ok {
+            color: green;
+
+        }
+
+        .not_ok {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        input 파일에 파일명. 확장자를 입력하여 전송버튼을 누르면
+        이미지 파일인지 검사하여
+        이미지이면 '정상파일입니다.'<초록색>
+        이미지 파일이 아니면
+        '이미지 파일만 가능합니다.' <빨간색>
+        출력합니다.
+        이미지파일 : jpg,png,jpeg, gif
+        -대문자로 된 확장자명도 판단 가능해야 함.
+
+
+     -->
+    <h1>당신의 파일은 이미지 입니까?</h1>
+    <input type="text" id="file_n">
+    <button type="button" id="file_btn" onclick="file_c()">전송버튼</button>
+    <h3 id="file_r" class="">
+
+
+        <script>
+            function file_c() {
+                let str = "";
+                let fileName = document.getElementById('file_n').value;
+                let file_C = fileName.substring(fileName.lastIndexOf(".") + 1);
+
+                if (file_C.match(/(jpg|jpeg|png|gif)/i)) {
+                    str += '<div class="ok">정상 파일입니다.</div>';
+                } else {
+                    str += '<div class="not_ok">이미지 파일만 가능합니다.</div>';
+                }
+
+                document.getElementById('file_r').innerHTML = str;
+            }
+        </script>
+</body>
+
+</html>

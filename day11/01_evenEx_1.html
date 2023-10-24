@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    이름: <input type="text" id="name"><br>
+    주민번호: <input type="text" id="rNum"><br>
+    <button type="button" onclick="result();">확인</button>
+    <h3 id="result">
+    </h3>
+
+    <script>
+        function result() {
+            let name = document.getElementById('name').value;
+            let rNum = document.getElementById('rNum').value;
+
+            let now = new Date();
+
+            let birth = rNum.substring(0, rNum.indexOf("-"));
+            let year = Number(birth.substring(0, 2));
+            let getNum = rNum.charAt(rNum.indexOf("-") + 1);
+            console.log(getNum);
+
+            let get = rNum.charAt(rNum.indexOf());
+            let mw = (getNum == "1" || getNum == "3") ? '남' : '여';
+            let age = (getNum <= 2) ? now.getFullYear() - (1900 + year) :
+                now.getFullYear() - (2000 + year);
+            document.getElementById('result').innerText =
+                `이름:${name}, 생년월일:${birth}, 나이:${age}, 성별:${mw}`;
+        }
+
+    </script>
+</body>
+
+</html>

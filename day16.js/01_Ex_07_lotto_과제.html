@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button type="button" id="makeRandom">
+        lotto번호 6개 출력
+    </button>
+    <h1 id="printNum">
+
+    </h1>
+    <button type="button" id="makeRando2">
+        당첨번호 7개(6자리+보너스1자리)출력
+    </button>
+    <h1 id="printNum2">
+        <button type="button" onclick="">당첨 확인 버튼</button>
+        <button type="button" onclick="">reset</button>
+        <h1 id="printResult"></h1>
+
+        <SCript>
+            let rNumArr = [];
+            const rNumSet = new Set();
+
+            const makeRando = document.getElementById('makeRandom');
+            const makeRando2 = document.getElementById('makeRandom2');
+
+            const printNum = document.getElementById('printNum');
+            const printNum2 = document.getElementById('printNum2');
+            const printResult = document.getElementById('printResult');
+
+            makeRandom.addEventListener('click', function () {
+                printNum.innerText = "";
+                let rNumSet = new Set();
+                for (let i = 0; rNumSet.size < 6; i++) {//set에 담기는 값이 6개까지 (중복 x)
+                    let rNum = Math.floor(Math.random() * 45) + 1;
+                    rNumSet.add(rNum);
+
+                }
+                console.log(rNumSet);
+
+                //배열로 변환
+
+                for (const r of rNumSet) {
+                    rNumArr.push(r);
+                }
+
+                printNum.innerText = rNumArr;
+
+                //정렬하여 화면에 찌기
+                printNum.innerText =
+                    rNumArr.sort(function (a, b) { return a - b });
+
+            })
+            let rNumArr2 = [];
+
+            makeRandom2.addEventListener('click', function () {
+                rNumArr2 = [];
+                printNum2.innerText = "";
+                let rNumSet2 = new Set();
+                for (let i = 0; rNumSet2.size < 7; i++) {
+                    let rNum = Math.floor(Math.random() * 45) + 1;
+                    rNumSet2.add(rNum);
+                }
+
+
+
+                for (let i = 0; i < rNumArr2.length - 1; i++) {
+                    printNum2.innerText += rNumArr2[i] + ", ";
+                }
+                printNum2.innerText += rNumArr2[rNumArr2.length - 1];
+
+                // Display the count of numbers
+                printNum2.innerText += ` (${rNumArr2.length} numbers)`;
+            });
+
+
+            function ranking() {
+                let cnt = 0;
+                let bonus = rNumArr2.pop();// 뱌열의 마지막 값을 뺴서 리턴
+                console.log(bonus);
+                for (const a of rNumArr) {
+                    for (const b of rNumArr2) {
+                        if (a == b) {
+                            cnt++;
+                        }
+                    }
+                }
+
+                let print = '';
+                switch (cnt) {
+                    case 6: print = '1등'; break;
+
+                    case 5:
+                        for (let i = 0; i < rNumArr.size; i++) {
+                            if (rNumArr[i] == bonus) {
+                                print = '2등'
+                            }
+                            else {
+                                print = '3e등'
+                            }
+                        }
+                        break;
+                    case 4: print = '4등';
+                    case 3: print = '5등'
+                    default
+                        : print = '꽝'
+                }
+                printResult.innerText += print;
+
+            }
+
+            function reset() {
+                //배열 내용 삭제: splic(index, count) : index부터, count계수까지 제
+                //splic(index,count,item) : index부터 count계수까지 제거 후 item 삽입
+                rNumArr.slice(0, 6);
+                rNumArr2.slice(0, 7);
+                printNum.innerText = '';
+                printNum2.innerText = '';
+                printResult.innerText = ''
+
+            }
+
+        </SCript>
+
+    </h1>
+</body>
+
+</html>

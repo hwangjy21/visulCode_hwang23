@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 
+        부모박스안에 box 3개 넣기 가로로 나열(left)
+        부모박스 크기가 500px*500px
+     -->
+    <style>
+        .p-box {
+            width: 500px;
+            height: 500px;
+            background-color: darksalmon;
+        }
+
+        .box {
+            width: calc(100% / 3);
+            /* 각 박스의 너비를 1/3로 설정하여 동일한 크기로 채웁니다. */
+            height: 500px;
+            float: left;
+        }
+
+        .box1 {
+            width: calc(100% / 3);
+            background-color: darksalmon;
+        }
+
+        .box2 {
+            width: calc((100% / 3)*2);
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="p-box">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+
+    </div>
+</body>
+
+</html>

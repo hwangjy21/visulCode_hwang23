@@ -1,0 +1,87 @@
+
+.container{
+    /* % : 부모기 기준 */
+    width: 100%;
+    /* vh: 모니터(브라우저) 높이 기준 */
+    height: 100vh;
+    background: linear-gradient(rgba(82, 67, 67, 0.815), rgba(0, 0, 0, 0.5)), url(/image/room_1.jpg);
+    background-size: cover;
+}
+.container .header{
+    width: 90%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.container .header h1 a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-size: 700;
+
+}
+
+.container .header .nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.container .header .nav ul li {
+  margin: 10px;
+}
+
+
+
+.container .header .nav ul li a{
+text-decoration: none;
+color: white;
+font-size: 15px;
+font-weight: 700;
+}
+
+
+.container .header .nav ul li a:hover {
+color: olivedrab
+}
+
+.container .main{
+    /* 전체 브라우저의 정 가운데 정렬 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+ 
+}
+
+.container .main h2{
+   
+    font-size: 50px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.container .main button{
+    background-color: transparent;
+    border: 2px solid green;
+    color: white;
+    font-weight:700 ;
+    padding: 15px 20px;
+    margin-top: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.5s;
+
+}
+.container .main button:hover{
+background-color: darkseagreen;
+color: black;
+
+}
+
